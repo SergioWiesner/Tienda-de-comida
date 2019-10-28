@@ -17,8 +17,8 @@ class CreateTableFranquicias extends Migration
             $table->bigIncrements('id');
             $table->string('nombrefranquicia');
             $table->integer('idlocalidad');
-            $table->string('direccion');
-            $table->string('telefono');
+            $table->string('direccion')->nullable();
+            $table->string('telefono')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

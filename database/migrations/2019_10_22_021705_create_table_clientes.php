@@ -15,10 +15,10 @@ class CreateTableClientes extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->bigIncrements('idcliente');
-            $table->integer('cedula');
+            $table->string('cedula');
             $table->string('nombre');
-            $table->string('ciudad');
-            $table->integer('puntos');
+            $table->string('ciudad')->nullable();
+            $table->integer('puntos')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -2,9 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c16ee69d-d79a-4bf8-8d4a-a45fbb1c5783" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modelos/Herramientas.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Modelos/productos.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/sistema/productos/crear.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/sistema/productos/lista.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/sistema/productos/ver.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_22_021603_create_table_franquicias.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_22_021603_create_table_franquicias.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_22_021653_create_table_ventas.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_22_021653_create_table_ventas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_22_021705_create_table_clientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_22_021705_create_table_clientes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_22_022359_create_table_detalles_productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_22_022359_create_table_detalles_productos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/FirstUserSeed.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/FirstUserSeed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/TipoEmpleadoSeed.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TipoEmpleadoSeed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/TipoProductoSeed.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TipoProductoSeed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -14,7 +30,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -147,6 +163,8 @@
       <option name="presentableId" value="Default" />
       <updated>1571707973280</updated>
       <workItem from="1571707974433" duration="5531000" />
+      <workItem from="1572188000140" duration="22000" />
+      <workItem from="1572219160811" duration="14063000" />
     </task>
     <servers />
   </component>
@@ -158,7 +176,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
