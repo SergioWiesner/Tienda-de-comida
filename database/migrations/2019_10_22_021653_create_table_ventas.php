@@ -16,12 +16,13 @@ class CreateTableVentas extends Migration
         Schema::create('ventas', function (Blueprint $table) {
             $table->bigIncrements('idventa');
             $table->integer('idcliente');
-            $table->integer('valortotal');
-            $table->integer('puntos');
+            $table->string('valortotal');
+            $table->string('puntos')->nullable();
             $table->boolean('utilizados');
             $table->date('fechaventa');
             $table->integer('idempleado');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

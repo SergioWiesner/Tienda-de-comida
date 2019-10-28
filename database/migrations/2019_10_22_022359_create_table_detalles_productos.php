@@ -15,12 +15,12 @@ class CreateTableDetallesProductos extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->bigIncrements('idproductos');
-            $table->string('nombre');
-            $table->integer('precio');
+            $table->string('nombre')->nullable();
+            $table->string('precio')->nullable();
             $table->date('fechacompra');
             $table->integer('idlocalidad');
             $table->integer('idtipoproducto');
-            $table->integer('stock');
+            $table->integer('stock')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

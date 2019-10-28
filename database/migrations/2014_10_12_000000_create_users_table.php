@@ -19,9 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('cedula');
-            $table->integer('telefono');
-            $table->integer('salario');
+            $table->string('cedula')->nullable();
+            $table->string('telefono')->nullable();
+            $table->string('salario')->nullable();
             $table->integer('idfranquicia');
             $table->integer('idtipoempleado');
             $table->date('fechainicio');

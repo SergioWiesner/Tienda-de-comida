@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c16ee69d-d79a-4bf8-8d4a-a45fbb1c5783" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -145,8 +145,8 @@
       <option name="presentableId" value="Default" />
       <updated>1571707973280</updated>
       <workItem from="1571707974433" duration="5531000" />
-      <workItem from="1572011731502" duration="596000" />
-      <workItem from="1572278716511" duration="136000" />
+      <workItem from="1572188000140" duration="22000" />
+      <workItem from="1572219160811" duration="14515000" />
     </task>
     <servers />
   </component>
@@ -165,5 +165,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" log-message="true" suspend="NONE" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/home.blade.php</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
