@@ -21,5 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::middleware(['auth'])->prefix('sistema')->group(function () {
-    Route::resource('productos', 'productosController');
+    Route::resource('productos', 'ProductosController');
+    Route::resource('usuarios', 'UsuariosController');
 });

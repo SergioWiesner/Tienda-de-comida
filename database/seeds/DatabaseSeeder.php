@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call(FirstUserSeed::class);
         $this->call(TipoEmpleadoSeed::class);
         $this->call(TipoProductoSeed::class);
-        $this->call(localidadeseed::class);
+        $this->call(localidadesSeed::class);
+        $this->call(FranquiciasSeed::class);
     }
 }

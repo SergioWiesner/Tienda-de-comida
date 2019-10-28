@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\tipoProducto;
-use App\localidades;
-use App\Modelos\productos;
+use App\franquicias;
+use App\Modelos\Herramientas;
+use App\Modelos\usuarios;
 
-class productosController extends Controller
+class UsuariosController extends Controller
 {
-    protected $productos;
+    protected $usuarios;
 
     public function __construct()
     {
-        $this->productos = new productos();
+        $this->usuarios = new usuarios();
     }
 
     /**
@@ -23,8 +23,8 @@ class productosController extends Controller
      */
     public function index()
     {
-        return view('sistema.productos.lista')
-            ->with('productos', $this->productos->obtenerListaProductos());
+        return view('sistema.usuarios.lista')
+            ->with('usuarios', $this->usuarios->listarUsuarios());
     }
 
     /**
@@ -35,9 +35,8 @@ class productosController extends Controller
     public function create()
     {
 
-        return view('sistema.productos.crear')
-            ->with('tipo', productos::obtenerTipoProductos())
-            ->with('localidad', localidades::all()->toArray());
+        return view('sistema.usuarios.crear')
+            ->with('franquicias', Herramientas::collectionToArray(franquicias::all()));
     }
 
     /**
@@ -48,8 +47,7 @@ class productosController extends Controller
      */
     public function store(Request $request)
     {
-        $id = $this->productos->agregarProductos($request->all());
-        return redirect()->route('productos.show', $id);
+        //
     }
 
     /**
@@ -60,10 +58,8 @@ class productosController extends Controller
      */
     public function show($id)
     {
-        return view('sistema.productos.ver')
-            ->with('data', $this->productos->buscarProductoId($id))
-            ->with('tipo', productos::obtenerTipoProductos())
-            ->with('localidad', localidades::all()->toArray());
+        return view('sistema.usuarios.ver')
+            ->with('usuarios', $this->usuarios->buscarUsuarioId($id));
     }
 
     /**
@@ -86,11 +82,7 @@ class productosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ($this->productos->actualizarProductos($id, $request->all())) {
-            return redirect()->back()->withErrors('Se ha actualizado exitosamente.');
-        } else {
-            return redirect()->back()->withErrors('No se ha podido actualizar.');
-        }
+        //
     }
 
     /**
@@ -101,10 +93,6 @@ class productosController extends Controller
      */
     public function destroy($id)
     {
-        if ($this->productos->eliminarProducto($id)) {
-            return redirect()->route('productos.index')->withErrors("El producto se ha eliminado exitosamente.");
-        } else {
-            return redirect()->back()->withErrors("No se pudo eliminae el producto.");
-        }
+        //
     }
 }
