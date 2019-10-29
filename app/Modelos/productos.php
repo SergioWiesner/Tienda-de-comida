@@ -3,15 +3,19 @@
 
 namespace App\Modelos;
 
-use App\Modelos\Herramientas;
 use App\productos as producto;
 use App\tipoProducto;
-use App\localidades;
+
 
 class productos
 {
 
     public static function obtenerTipoProductos()
+    {
+        return Herramientas::collectionToArray(tipoProducto::all());
+    }
+
+    public static function obtenerProveedores()
     {
         return tipoProducto::all()->toArray();
     }
@@ -23,20 +27,28 @@ class productos
 
     public function agregarProductos($data)
     {
+        $stock = $data['stock'];
+        if (is_null($data['stock'])) {
+            $stock = 1000000000;
+        }
         $transaccion = producto::create([
             'nombre' => $data['nombre'],
             'precio' => $data['precio'],
             'fechacompra' => $data['fechacompra'],
             'idlocalidad' => $data['idlocalidad'],
             'idtipoproducto' => $data['idtipoproducto'],
-            'stock' => $data['stock']
+            'stock' => $stock
         ]);
         return $transaccion->id;
     }
 
     public function buscarProductoId($id)
     {
-        return Herramientas::collectionToArray(producto::where('idproductos', $id)->get())[0];
+        try {
+            return Herramientas::collectionToArray(producto::where('idproductos', $id)->get())[0];
+        } catch (\Exception $e) {
+            abort(404);
+        }
     }
 
     public function actualizarProductos($id, $data)

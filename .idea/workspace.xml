@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c16ee69d-d79a-4bf8-8d4a-a45fbb1c5783" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/sistema/ventas/crear.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsuariosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsuariosController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modelos/productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modelos/productos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modelos/usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modelos/usuarios.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tipoEmpleado.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/tipoEmpleado.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_22_022359_create_table_detalles_productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_22_022359_create_table_detalles_productos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sistema/productos/crear.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sistema/productos/crear.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sistema/productos/ver.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sistema/productos/ver.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sistema/usuarios/crear.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sistema/usuarios/crear.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sistema/usuarios/lista.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sistema/usuarios/lista.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sistema/usuarios/ver.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sistema/usuarios/ver.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,6 +160,8 @@
       <workItem from="1571707974433" duration="5531000" />
       <workItem from="1572188000140" duration="22000" />
       <workItem from="1572219160811" duration="14515000" />
+      <workItem from="1572311035114" duration="4310000" />
+      <workItem from="1572316790720" duration="4060000" />
     </task>
     <servers />
   </component>

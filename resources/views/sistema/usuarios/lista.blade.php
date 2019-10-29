@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+    <h3>Lista de usuarios activos.</h3>
     <table class="table table-striped">
         <thead>
         <tr>
