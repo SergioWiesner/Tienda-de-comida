@@ -43,7 +43,7 @@
         </div>
         <div class="form-group">
             <label for="stock">Stock</label>
-            <input type="number" class="form-control" name="stock" id="stock" placeholder="100000">
+            <input type="text" class="form-control" name="stock" id="stock" placeholder="100000">
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Agregar">

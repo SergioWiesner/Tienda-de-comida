@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Modelos\productos;
 use Illuminate\Http\Request;
-use App\franquicias;
-use App\Modelos\Herramientas;
-use App\Modelos\usuarios;
 
-class UsuariosController extends Controller
+class ProductosApiController extends Controller
 {
-    protected $usuarios;
+
+    protected $productos;
 
     public function __construct()
     {
-        $this->usuarios = new usuarios();
+        $this->productos = new productos();
     }
 
     /**
@@ -23,8 +22,7 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        return view('sistema.usuarios.lista')
-            ->with('usuarios', $this->usuarios->listarUsuarios());
+        //
     }
 
     /**
@@ -34,10 +32,7 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-
-        return view('sistema.usuarios.crear')
-            ->with('franquicias', Herramientas::collectionToArray(franquicias::all()))
-            ->with('tipo', $this->usuarios->obterTiposUsuarios());
+        //
     }
 
     /**
@@ -48,8 +43,7 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        $id = $this->usuarios->agregarUsuario($request->all());
-        return redirect()->route('usuarios.show', $id);
+        //
     }
 
     /**
@@ -60,10 +54,7 @@ class UsuariosController extends Controller
      */
     public function show($id)
     {
-        return view('sistema.usuarios.ver')
-            ->with('usuario', $this->usuarios->buscarUsuarioId($id))
-            ->with('franquicias', Herramientas::collectionToArray(franquicias::all()))
-            ->with('tipo', $this->usuarios->obterTiposUsuarios());
+        return response()->json($this->productos->buscarProductoId($id));
     }
 
     /**
@@ -86,11 +77,7 @@ class UsuariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ($this->usuarios->actualizarUsuario($request->all(), $id)) {
-            return redirect()->back()->withErrors("Actualizado exitosamente");
-        } else {
-            return redirect()->back()->withErrors("No se pudo actualizar");
-        }
+        //
     }
 
     /**
@@ -101,10 +88,6 @@ class UsuariosController extends Controller
      */
     public function destroy($id)
     {
-        if ($this->usuarios->eliminarUsuarios($id)) {
-            return redirect()->route('usuarios.index')->withErrors("Eliminado exitosamente");
-        } else {
-            return redirect()->back()->withErrors("No se pudo eliminar");
-        }
+        //
     }
 }

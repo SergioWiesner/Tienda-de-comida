@@ -20,7 +20,7 @@ class CreateTableDetallesProductos extends Migration
             $table->date('fechacompra');
             $table->integer('idlocalidad');
             $table->integer('idtipoproducto');
-            $table->integer('stock')->nullable();
+            $table->string('stock')->default('1000000000000');
             $table->timestamps();
             $table->softDeletes();
         });

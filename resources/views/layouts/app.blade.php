@@ -52,6 +52,7 @@
                                 <a class="dropdown-item" href="{{route('productos.create')}}">Crear</a>
                             </div>
                         </li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('ventas.create')}}">Ventas</a></li>
                     @endguest
                 </ul>
 
