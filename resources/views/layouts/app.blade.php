@@ -52,6 +52,16 @@
                                 <a class="dropdown-item" href="{{route('productos.create')}}">Crear</a>
                             </div>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Proveedores
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('proveedores.index')}}">Ver</a>
+                                <a class="dropdown-item" href="{{route('proveedores.create')}}">Crear</a>
+                            </div>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="{{route('ventas.create')}}">Ventas</a></li>
                     @endguest
                 </ul>
@@ -118,5 +128,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+<script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>
