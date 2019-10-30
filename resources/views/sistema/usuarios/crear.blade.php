@@ -29,11 +29,6 @@
         </div>
         <div class="form-group">
             <label for="salario">Salario</label>
-            <input type="text" class="form-control" name="salario" id="salario"
-                   placeholder="Salario" required>
-        </div>
-        <div class="form-group">
-            <label for="salario">Salario</label>
             <div class="input-group mb-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
