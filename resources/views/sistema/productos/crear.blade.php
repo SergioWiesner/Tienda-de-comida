@@ -27,6 +27,16 @@
                 </select>
             </div>
         @endif
+        @if(isset($tipo))
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Tipo producto</label>
+                <select class="form-control" name="idtipoproducto" required>
+                    @for($d = 0; $d < count($tipo); $d++)
+                        <option value="{{$tipo[$d]['id']}}">{{$tipo[$d]['nombre']}}</option>
+                    @endfor
+                </select>
+            </div>
+        @endif
         @if(isset($proveedores))
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Proveedor</label>
