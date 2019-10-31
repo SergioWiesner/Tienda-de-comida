@@ -3,38 +3,35 @@
     <div class="row">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect2">Producto</label>
-                        <select class="form-control" id="productosid">
-                            <option></option>
-                            @if(count($productos) > 0)
-                                @for($a = 0; $a < count($productos); $a++)
-                                    <option
-                                        value="{{$productos[$a]['idproductos']}}">{{$productos[$a]['nombre']}}</option>
-                                @endfor
-                            @endif
-                        </select>
-                    </div>
-                    <button onClick="agregarproducto()" class="btn btn-primary btn-block">Agregar</button>
-                </div>
-                <div class="col-md-8">
-                    <h1>Productos</h1>
+                <div class="col-md-12">
+                    <h1>Crear venta</h1>
                     <hr>
-                    <form action="" method="post">
+                    <form action="{{route('ventas.store')}}" method="post">
                         @csrf
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect2">Usuario</label>
-                            <select name="cliente" class="form-control" id="productosid" required>
-                                <option></option>
-                                @if(count($usuarios) > 0)
-                                    @for($a = 0; $a < count($usuarios); $a++)
-                                        <option
-                                            value="{{$usuarios[$a]['id']}}">{{$usuarios[$a]['nombre']}}</option>
-                                    @endfor
-                                @endif
-
-                            </select>
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <h3>Cliente</h3>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="hidden" name="idcliente" id="idlciente">
+                                <input type="text" class="form-control" id="clientescedula" name="clientes[cedula]" placeholder="cedula">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" id="clientesnombre" name="clientes[nombre]"
+                                       placeholder="nombre">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" id="clientesciudad" name="clientes[ciudad]"
+                                       placeholder="ciudad">
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <h3>Productos</h3>
+                            </div>
                         </div>
                         <table class="table">
                             <thead>
@@ -51,11 +48,29 @@
                             </tbody>
                             <tr>
                                 <th colspan="4"><h3>Total</h3></th>
-                                <th><p id="valortotal"></p></th>
+                                <th><p id="valortotal"></p><input type="hidden" name="valortotal" id="valortotalinput">
+                                </th>
                             </tr>
                         </table>
                         <input type="submit" value="Generar venta" class="btn btn-primaty btn-block">
                     </form>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <select class="form-control" id="productosid">
+                                <option></option>
+                                @if(count($productos) > 0)
+                                    @for($a = 0; $a < count($productos); $a++)
+                                        <option
+                                            value="{{$productos[$a]['idproductos']}}">{{$productos[$a]['nombre']}}</option>
+                                    @endfor
+                                @endif
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <button onClick="agregarproducto()" class="btn btn-primary btn-block">Agregar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,6 +111,8 @@
                 sumatoria += pedido[c]['subtotal'];
             }
             document.getElementById('valortotal').innerText = "$" + new Intl.NumberFormat("COP-CO").format(sumatoria);
+            document.getElementById('valortotalinput').value = sumatoria;
+
         }
 
         function agregarproducto() {

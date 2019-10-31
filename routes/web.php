@@ -25,4 +25,5 @@ Route::middleware(['auth'])->prefix('sistema')->group(function () {
     Route::resource('usuarios', 'UsuariosController');
     Route::resource('ventas', 'VentasController');
     Route::resource('proveedores', 'ProveedoresController');
+    Route::resource('clientes', 'ClientesController');
 });

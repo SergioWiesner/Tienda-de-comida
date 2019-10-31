@@ -48,6 +48,16 @@
                 </select>
             </div>
         @endif
+        @if(isset($proveedores))
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Proveedor</label>
+                <select class="form-control" name="idtipoproducto" id="exampleFormControlSelect1" required>
+                    @for($c = 0; $c < count($proveedores); $c++)
+                        <option value="{{$proveedores[$c]['id']}}">{{$proveedores[$c]['nombreproveedor']}}</option>
+                    @endfor
+                </select>
+            </div>
+        @endif
         <div class="form-group">
             <label for="fechacompra">Fecha de compra</label>
             <input type="date" class="form-control" name="fechacompra" id="fechacompra"

@@ -8,7 +8,7 @@ use App\proveedores as proveedoresbd;
 class proveedores
 {
 
-    public function listarProveedores()
+    public static function listarProveedores()
     {
         return Herramientas::collectionToArray(proveedoresbd::all());
     }
@@ -30,6 +30,11 @@ class proveedores
     public function eliminarProveedor($id)
     {
         return proveedoresbd::where('id', $id)->delete();
+    }
+
+    public function buscarProveedor($id)
+    {
+        return Herramientas::collectionToArray(proveedoresbd::where('id', $id));
     }
 
 }

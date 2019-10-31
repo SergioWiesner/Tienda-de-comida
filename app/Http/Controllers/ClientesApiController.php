@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Modelos\proveedores;
+use App\Modelos\clientes;
 use Illuminate\Http\Request;
 
-class ProveedoresController extends Controller
+class ClientesApiController extends Controller
 {
     protected $manager;
 
     public function __construct()
     {
-        $this->manager = new proveedores();
+        $this->manager = new clientes();
     }
 
     /**
@@ -21,8 +21,7 @@ class ProveedoresController extends Controller
      */
     public function index()
     {
-        return view('sistema.proveedores.lista')
-            ->with('proveedores', $this->manager->listarProveedores());
+        //
     }
 
     /**
@@ -43,11 +42,7 @@ class ProveedoresController extends Controller
      */
     public function store(Request $request)
     {
-        if ($this->manager->agregarProveedores($request->all())) {
-            return redirect()->route('proveedores.index')->withErrors("Se creo exitosamente el proveedor");
-        } else {
-            return redirect()->back()->withErrors("No se pudo crear el proveedor");
-        }
+        //
     }
 
     /**
@@ -58,8 +53,7 @@ class ProveedoresController extends Controller
      */
     public function show($id)
     {
-        return view('sistema.proveedores.ver')
-            ->with('datos', $this->manager->buscarProveedor($id));
+        return response()->json($this->manager->buscarClienteCedula($id));
     }
 
     /**
@@ -82,7 +76,7 @@ class ProveedoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->manager->actualizarProveedor($request->all(), $id);
+        //
     }
 
     /**
@@ -93,10 +87,6 @@ class ProveedoresController extends Controller
      */
     public function destroy($id)
     {
-        if ($this->manager->eliminarProveedor($id)) {
-            return redirect()->route('proveedores.index')->withErrors("Se elimino exitosamente el proveedor");
-        } else {
-            return redirect()->route('proveedores.index')->withErrors("No se pudeo eliminar el proveedor");
-        }
+        //
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Modelos\Herramientas;
+use App\Modelos\proveedores;
 use Illuminate\Http\Request;
 use App\tipoProducto;
 use App\localidades;
@@ -38,7 +39,8 @@ class productosController extends Controller
 
         return view('sistema.productos.crear')
             ->with('tipo', productos::obtenerTipoProductos())
-            ->with('localidad', Herramientas::collectionToArray(localidades::all()));
+            ->with('localidad', Herramientas::collectionToArray(localidades::all()))
+            ->with('proveedores', proveedores::listarProveedores());
     }
 
     /**
@@ -64,7 +66,8 @@ class productosController extends Controller
         return view('sistema.productos.ver')
             ->with('data', $this->productos->buscarProductoId($id))
             ->with('tipo', productos::obtenerTipoProductos())
-            ->with('localidad', Herramientas::collectionToArray(localidades::all()));
+            ->with('localidad', Herramientas::collectionToArray(localidades::all()))
+            ->with('proveedores', proveedores::listarProveedores());
     }
 
     /**

@@ -27,12 +27,12 @@
                 </select>
             </div>
         @endif
-        @if(isset($tipo))
+        @if(isset($proveedores))
             <div class="form-group">
-                <label for="exampleFormControlSelect1">¿Tipo producto?</label>
+                <label for="exampleFormControlSelect1">Proveedor</label>
                 <select class="form-control" name="idtipoproducto" id="exampleFormControlSelect1" required>
-                    @for($a = 0; $a < count($tipo); $a++)
-                        <option value="{{$tipo[$a]['id']}}">{{$tipo[$a]['nombre']}}</option>
+                    @for($c = 0; $c < count($proveedores); $c++)
+                        <option value="{{$proveedores[$c]['id']}}">{{$proveedores[$c]['nombreproveedor']}}</option>
                     @endfor
                 </select>
             </div>
