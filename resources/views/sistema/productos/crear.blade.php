@@ -30,7 +30,7 @@
         @if(isset($proveedores))
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Proveedor</label>
-                <select class="form-control" name="idtipoproducto" id="exampleFormControlSelect1" required>
+                <select class="form-control" name="idproveedor" id="exampleFormControlSelect1" required>
                     @for($c = 0; $c < count($proveedores); $c++)
                         <option value="{{$proveedores[$c]['id']}}">{{$proveedores[$c]['nombreproveedor']}}</option>
                     @endfor

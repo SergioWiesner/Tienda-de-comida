@@ -37,6 +37,7 @@ class productos
             'fechacompra' => $data['fechacompra'],
             'idlocalidad' => $data['idlocalidad'],
             'idtipoproducto' => $data['idtipoproducto'],
+            'idproveedor' => $data['idproveedor'],
             'stock' => $stock
         ]);
         return $transaccion->id;
