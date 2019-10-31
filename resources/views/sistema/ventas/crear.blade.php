@@ -6,7 +6,7 @@
                 <div class="col-md-12">
                     <h1>Crear venta</h1>
                     <hr>
-                    <form action="{{route('ventas.store')}}" method="post">
+                    <form action="{{route('ventas.store')}}" method="post" onKeypress="if(event.keyCode == 13) event.returnValue = false;">
                         @csrf
                         <div class="form-row">
                             <div class="col-md-12">
@@ -52,7 +52,7 @@
                                 </th>
                             </tr>
                         </table>
-                        <input type="submit" value="Generar venta" class="btn btn-primaty btn-block">
+                        <input type="submit" value="Generar venta" class="btn btn-primary btn-block">
                     </form>
                     <br>
                     <div class="row">

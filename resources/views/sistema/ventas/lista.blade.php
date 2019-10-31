@@ -11,7 +11,6 @@
                 <th scope="col">Fecha registro</th>
                 <th scope="col">Valor</th>
                 <th scope="col">Puntos</th>
-                <th scope="col">Valor</th>
                 <th scope="col"></th>
             </tr>
             </thead>

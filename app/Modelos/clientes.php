@@ -20,6 +20,11 @@ class clientes
 
     public function buscarClienteCedula($cedula)
     {
-        return Herramientas::collectionToArray(clientesBD::where('cedula', $cedula)->get());
+        $client = Herramientas::collectionToArray(clientesBD::where('cedula', $cedula)->get());
+        if (count($client) > 0) {
+            return $client[0];
+        } else {
+            return [];
+        }
     }
 }

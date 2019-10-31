@@ -2,29 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c16ee69d-d79a-4bf8-8d4a-a45fbb1c5783" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Modelos/clientes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Modelos/ventas.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/sistema/proveedores/lista.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/sistema/proveedores/ver.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/sistema/ventas/lista.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/sistema/ventas/ver.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Unimonito.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Unimonito.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductosController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProveedoresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProveedoresController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VentasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VentasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Modelos/proveedores.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modelos/proveedores.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/clientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/clientes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modelos/clientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modelos/clientes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modelos/productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modelos/productos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modelos/ventas.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modelos/ventas.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/detallesVentas.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/detallesVentas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ventas.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ventas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/productos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sistema/productos/crear.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sistema/productos/crear.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sistema/productos/ver.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sistema/productos/ver.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/sistema/ventas/crear.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sistema/ventas/crear.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sistema/ventas/lista.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sistema/ventas/lista.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sistema/ventas/ver.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sistema/ventas/ver.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,6 +121,9 @@
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
     </include_path>
   </component>
   <component name="ProjectId" id="1SXRUxnIEQqcI7jekS2tXHYamQr" />

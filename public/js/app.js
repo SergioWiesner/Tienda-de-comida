@@ -3,18 +3,17 @@ $(document).ready(function () {
         // sleep(2000)
         // $(this).attr("disabled", true);
     });
-    $('#clientescedula').keydown(function () {
-        console.log($(this).val().length);
-        if ($(this).val().length > 7) {
+    $('#clientescedula').keydown(function (e) {
+        if (e.keyCode == 13) {
             $.ajax({
                 url: '/api/clientesApi/' + $(this).val(),
                 success: function (respuesta) {
-                    console.log(JSON.parse(respuesta));
-                    if (respuesta.length == 1) {
-                        console.log("lo encontro ->" + respuesta);
-                        // $('#clientesnombre').attr('', );
+                    if (respuesta['idcliente'] != undefined) {
+                        $('#idlciente').attr('value', respuesta['idcliente']);
+                        $('#clientesnombre').attr('value', respuesta['nombre']);
+                        $('#clientesciudad').attr('value', respuesta['ciudad']);
                     } else {
-                        console.log("no lo ha encontrado hay " + respuesta.length + " registros");
+                        alert('No se encontro cliente');
                     }
                 },
                 error: function () {

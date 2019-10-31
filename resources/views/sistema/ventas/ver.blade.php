@@ -1,36 +1,47 @@
 @extends('layouts.app')
 @section('content')
-    {{dd($venta)}}
-    <h3>Historial de ventas.</h3>
-    <br><br>
-    @if(count($ventas) > 0)
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Fecha venta</th>
-                <th scope="col">Fecha registro</th>
-                <th scope="col">Valor</th>
-                <th scope="col">Puntos</th>
-                <th scope="col">Valor</th>
-                <th scope="col"></th>
-            </tr>
-            </thead>
-            <tbody>
-            @for($a = 0; $a < count($ventas); $a++)
+    <div class="recibo">
+        <div class="row">
+            <div class="col-md-12 text-center"><h1>RECIBO DE COMPRA</h1><br><br></div>
+            <div class="col-md-4"><h2>UNIMINUTO</h2>{{$venta['clientes']['ciudad']}}</div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"><h5>Fecha venta: </h5>{{$venta['fechaventa']}}</div>
+            <div class="col-md-4"><h5>Atendido por:</h5> {{$venta['empleado']['nombre']}}
+                <br> {{$venta['empleado']['email']}}</div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"><h5>Datos cliente</h5><br> <strong>Nombre:</strong> {{$venta['clientes']['nombre']}}
+                <br>
+                <strong>Cedula:</strong> {{$venta['clientes']['cedula']}}</div>
+            <div class="col-md-6"></div>
+        </div>
+        <br>
+        @if(count($venta) > 0)
+            <table class="table table-striped">
+                <thead>
                 <tr>
-                    <th scope="row">{{$a+1}}</th>
-                    <td>{{$ventas[$a]['fechaventa']}}</td>
-                    <td>{{$ventas[$a]['created_at']}}</td>
-                    <td>${{number_format($ventas[$a]['valortotal'])}}</td>
-                    <td>{{$ventas[$a]['puntos']}}</td>
-                    <td><a href="{{route('ventas.show', $ventas[$a]['idventa'])}}"><i
-                                class="far fa-eye"></i></a></td>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre producto</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Subtotal</th>
                 </tr>
-            @endfor
-            </tbody>
-        </table>
-    @else
-        <h1>No existen proveedores</h1>
-    @endif
+                </thead>
+                <tbody>
+                @for($a = 0; $a < count($venta['detallesventas']); $a++)
+                    <tr>
+                        <th scope="row">{{$a+1}}</th>
+                        <td>{{$venta['detallesventas'][$a]['producto']['nombre']}}</td>
+                        <td>{{number_format($venta['detallesventas'][$a]['cantidad'])}}</td>
+                        <td>${{number_format($venta['detallesventas'][$a]['valor'])}}</td>
+                    </tr>
+                @endfor
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td><h3>TOTAL A PAGAR</h3></td>
+                    <td>${{number_format($venta['valortotal'])}}</td>
+                </tr>
+                </tbody>
+            </table>
+        @endif
+    </div>
 @endsection

@@ -68,4 +68,13 @@ class productos
         return producto::where('idproductos', $id)->delete();
     }
 
+    public static function descuentoStock($id, $cantidad)
+    {
+        producto::where('idproductos', $id)->decrement('stock', $cantidad);
+    }
+
+    public static function aumentoStock($id, $cantidad)
+    {
+        producto::where('idproductos', $id)->decrement('stock', $cantidad);
+    }
 }

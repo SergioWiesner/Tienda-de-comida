@@ -35,6 +35,7 @@ class ventas
             self::eliminarVenta($venta->id);
             return false;
         }
+
         return true;
     }
 
@@ -48,13 +49,17 @@ class ventas
                     'cantidad' => $productos['cantidad'][$a],
                     'valor' => ($productos['cantidad'][$a] * $productos['valorunidad'][$a])
                 ]);
+                productos::descuentoStock($productos['id'][$a], $productos['valorunidad'][$a]);
             }
             return true;
         } catch (\Exception $e) {
             self::eliminarProductosVenta($idventa);
-            Log::error("Error al registrar producto de la venta " . $idventa . " ERROR :> " . $e->getMessage());
-            return false;
+            for ($a = 0; $a < count($productos['id']); $a++) {
+                productos::aumentoStock($productos['id'][$a], $productos['valorunidad'][$a]);
+            }
         }
+        Log::error("Error al registrar producto de la venta " . $idventa . " ERROR :> " . $e->getMessage());
+        return false;
     }
 
     public function eliminarProductosVenta($id)
@@ -79,7 +84,7 @@ class ventas
 
     public function buscarVenta($id)
     {
-        $data = Herramientas::collectionToArray(ventasBD::where('idventa', $id)->with('clientes')->has('detallesventas')->with('empleado')->get());
+        $data = Herramientas::collectionToArray(ventasBD::where('idventa', $id)->with('clientes')->with('detallesventas.producto')->with('empleado')->get());
         if (count($data) > 0) {
             return $data[0];
         } else {
