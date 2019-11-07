@@ -13,6 +13,6 @@ class productos extends Model
 
     public function detallesVenta()
     {
-
+        return $this->hasOne('App\detalles_venta', 'idproductos', 'idproducto');
     }
 }

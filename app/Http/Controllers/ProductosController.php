@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Modelos\Herramientas;
 use App\Modelos\proveedores;
 use Illuminate\Http\Request;
+use App\Modelos\productos;
+use App\Http\Requests\productosRequest;
 use App\tipoProducto;
 use App\localidades;
-use App\Modelos\productos;
+
 
 class productosController extends Controller
 {
@@ -49,7 +51,7 @@ class productosController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(productosRequest $request)
     {
         $id = $this->productos->agregarProductos($request->all());
         return redirect()->route('productos.show', $id);

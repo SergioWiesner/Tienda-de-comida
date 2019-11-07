@@ -71,11 +71,20 @@ class productos
 
     public static function descuentoStock($id, $cantidad)
     {
-        producto::where('idproductos', $id)->decrement('stock', $cantidad);
+        $stockviejo = producto::where('idproductos', $id)->get(['stock']);
+        $stockactual = $stockviejo - $cantidad;
+        if ($stockactual < 0) {
+            return producto::where('idproductos', $id)->update([
+                'stock' => $stockactual
+            ]);
+        } else {
+            return false;
+        }
+
     }
 
     public static function aumentoStock($id, $cantidad)
     {
-        producto::where('idproductos', $id)->decrement('stock', $cantidad);
+        producto::where('idproductos', $id)->increment('stock', $cantidad);
     }
 }
