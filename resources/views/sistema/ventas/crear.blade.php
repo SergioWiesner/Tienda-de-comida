@@ -6,7 +6,8 @@
                 <div class="col-md-12">
                     <h1>Crear venta</h1>
                     <hr>
-                    <form action="{{route('ventas.store')}}" method="post" onKeypress="if(event.keyCode == 13) event.returnValue = false;">
+                    <form action="{{route('ventas.store')}}" method="post"
+                          onKeypress="if(event.keyCode == 13) event.returnValue = false;">
                         @csrf
                         <div class="form-row">
                             <div class="col-md-12">
@@ -16,7 +17,8 @@
                         <div class="form-row">
                             <div class="col">
                                 <input type="hidden" name="idcliente" id="idlciente">
-                                <input type="text" class="form-control" id="clientescedula" name="clientes[cedula]" placeholder="cedula">
+                                <input type="text" class="form-control" id="clientescedula" name="clientes[cedula]"
+                                       placeholder="cedula">
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" id="clientesnombre" name="clientes[nombre]"
@@ -127,14 +129,18 @@
                 }
             }
             if (flag != true) {
-                lista.push(id);
                 fetch('/api/productosApi/' + id).then(res => res.json())
                     .catch(error => console.error('Error:', error))
                     .then(response => {
-                        elChild = document.createElement('tr');
-                        elChild.innerHTML = '<th scope="row"> <input type="hidden" name="producto[id][]" value="' + response['idproductos'] + '"><input type="hidden" name="producto[nombre][]" value="' + response['nombre'] + '"><input type="hidden" name="producto[stock][]" value="' + response['stock'] + '"><input type="hidden" name="producto[valorunidad][]" value="' + response['precio'] + '">' + response['nombre'] + '</th><td><input type="text" name="producto[cantidad][]" id="id' + response['idproductos'] + '" item="' + response['idproductos'] + '"  precio="' + response['precio'] + '" cantmax="' + response['stock'] + '" placeholder="' + response['stock'] + '" required></td><td> <h5>NO ESPECIFICADO</h5> </td><td>$' + new Intl.NumberFormat("COP-CO").format(response['precio']) + '</td><td><p id="total' + response['idproductos'] + '"></p></td>'
-                        document.getElementById('cuerpoproductos').appendChild(elChild);
-                        document.getElementById('id' + response['idproductos']).addEventListener('keyup', calc);
+                        if (response['stock'] > 0) {
+                            lista.push(id);
+                            elChild = document.createElement('tr');
+                            elChild.innerHTML = '<th scope="row"> <input type="hidden" name="producto[id][]" value="' + response['idproductos'] + '"><input type="hidden" name="producto[nombre][]" value="' + response['nombre'] + '"><input type="hidden" name="producto[stock][]" value="' + response['stock'] + '"><input type="hidden" name="producto[valorunidad][]" value="' + response['precio'] + '">' + response['nombre'] + '</th><td><input type="text" name="producto[cantidad][]" id="id' + response['idproductos'] + '" item="' + response['idproductos'] + '"  precio="' + response['precio'] + '" cantmax="' + response['stock'] + '" placeholder="' + response['stock'] + '" required></td><td> <h5>NO ESPECIFICADO</h5> </td><td>$' + new Intl.NumberFormat("COP-CO").format(response['precio']) + '</td><td><p id="total' + response['idproductos'] + '"></p></td>'
+                            document.getElementById('cuerpoproductos').appendChild(elChild);
+                            document.getElementById('id' + response['idproductos']).addEventListener('keyup', calc);
+                        } else {
+                            alert("el producto " + response['nombre'] + " No tiene stock");
+                        }
                     });
             }
         }

@@ -31,9 +31,10 @@ class ventas
             'fechaventa' => $hoy->toDateString(),
             'idempleado' => Auth::user()->id
         ]);
-        if (!self::registrarProductosVenta($venta->idventa, $data['producto'])) {
-            self::eliminarVenta($venta->idventa);
-            return false;
+        $detalles = self::registrarProductosVenta($venta->idventa, $data['producto']);
+        if (count($detalles) > 0) {
+            //self::eliminarVenta($venta->idventa);
+            return $detalles;
         }
 
         return $venta->idventa;
@@ -41,18 +42,21 @@ class ventas
 
     public function registrarProductosVenta($idventa, $productos)
     {
-
+        $errores = [];
         try {
-        for ($a = 0; $a < count($productos['id']); $a++) {
-            detallesVentas::create([
-                'idventa' => $idventa,
-                'idproducto' => $productos['id'][$a],
-                'cantidad' => $productos['cantidad'][$a],
-                'valor' => ($productos['cantidad'][$a] * $productos['valorunidad'][$a])
-            ]);
-            productos::descuentoStock($productos['id'][$a], $productos['valorunidad'][$a]);
-        }
-        return true;
+            for ($a = 0; $a < count($productos['id']); $a++) {
+                if (productos::descuentoStock($productos['id'][$a], $productos['valorunidad'][$a])) {
+                    detallesVentas::create([
+                        'idventa' => $idventa,
+                        'idproducto' => $productos['id'][$a],
+                        'cantidad' => $productos['cantidad'][$a],
+                        'valor' => ($productos['cantidad'][$a] * $productos['valorunidad'][$a])
+                    ]);
+                } else {
+                    array_push($errores, "el producto +" . $productos['nombre'][$a] . " no pudo ser agregado a la venta");
+                }
+            }
+            return $errores;
         } catch (\Exception $e) {
             self::eliminarProductosVenta($idventa);
             for ($a = 0; $a < count($productos['id']); $a++) {

@@ -1,4 +1,4 @@
-<?php
+<<?php
 
 namespace App\Http\Controllers;
 
@@ -52,10 +52,11 @@ class VentasController extends Controller
      */
     public function store(ventasRequest $request)
     {
-        if ($id = $this->ventas->crearVenta($request->all())) {
+        $id = $this->ventas->crearVenta($request->all());
+        if (!is_array($id)) {
             return redirect()->route('ventas.show', $id)->withErrors("Venta existosa");
         } else {
-            return redirect()->back()->withErrors("No se pudo generar la venta");
+            return redirect()->back()->withErrors("No se pudo generar la venta" + json_encode($id));
         }
     }
 
