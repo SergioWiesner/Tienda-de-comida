@@ -3,7 +3,7 @@
     <div class="recibo">
         <div class="row">
             <div class="col-md-12 text-center"><h1>RECIBO DE COMPRA</h1><br><br></div>
-            <div class="col-md-4"><h2>UNIMINUTO</h2>{{$venta['clientes']['ciudad']}}</div>
+            <div class="col-md-4"><h2>UNIMONITO</h2>{{$venta['clientes']['ciudad']}}</div>
             <div class="col-md-4"></div>
             <div class="col-md-4"><h5>Fecha venta: </h5>{{$venta['fechaventa']}}</div>
             <div class="col-md-4"><h5>Atendido por:</h5> {{$venta['empleado']['nombre']}}
@@ -21,7 +21,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nombre producto</th>
-                    <th scope="col">Cantidad</th>
+                    <th scope="col">Cantidad</th>productos
                     <th scope="col">Subtotal</th>
                 </tr>
                 </thead>

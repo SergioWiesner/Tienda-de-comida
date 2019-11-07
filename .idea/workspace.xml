@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c16ee69d-d79a-4bf8-8d4a-a45fbb1c5783" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/plantillaInforme.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Unimonito.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Unimonito.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductosController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsuariosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsuariosController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VentasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VentasController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modelos/productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modelos/productos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modelos/ventas.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modelos/ventas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/productos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sistema/ventas/lista.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sistema/ventas/lista.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sistema/ventas/ver.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sistema/ventas/ver.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,12 +127,17 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
     </include_path>
   </component>
   <component name="ProjectId" id="1SXRUxnIEQqcI7jekS2tXHYamQr" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../grou" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
@@ -152,6 +173,10 @@
       <workItem from="1572219160811" duration="14515000" />
       <workItem from="1572311035114" duration="4310000" />
       <workItem from="1572316790720" duration="4060000" />
+      <workItem from="1572798480314" duration="3048000" />
+      <workItem from="1572824914706" duration="4974000" />
+      <workItem from="1572890328608" duration="5252000" />
+      <workItem from="1573098152669" duration="3972000" />
     </task>
     <servers />
   </component>

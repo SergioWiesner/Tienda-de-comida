@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <h3>Historial de ventas.</h3>
-    <br><br>
+    <br>
+    <a href="{{route('descargainformeventas')}}" target="_blank" class="btn btn-primary">Descargar Informe</a>
+    <br>
     @if(count($ventas) > 0)
         <table class="table table-striped">
             <thead>

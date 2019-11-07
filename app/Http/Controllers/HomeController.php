@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Modelos\ventas;
 use Illuminate\Http\Request;
+use PDF;
+
 
 class HomeController extends Controller
 {
@@ -24,5 +27,12 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function generarInformeVentas()
+    {
+        $ventas = ventas::listarVentasInforme();
+        $pdf = \PDF::loadView('layouts.plantillaInforme', compact('ventas'));
+        return $pdf->download('Informe-Ventas.pdf');
     }
 }

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Modelos\productos;
-use App\Modelos\usuarios;
 use App\Modelos\ventas;
+use App\Modelos\usuarios;
+use App\Modelos\productos;
 use Illuminate\Http\Request;
+use App\Http\Requests\ventasRequest;
 
 class VentasController extends Controller
 {
@@ -49,10 +50,10 @@ class VentasController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ventasRequest $request)
     {
-        if ($this->ventas->crearVenta($request->all())) {
-            return redirect()->route('ventas.create')->withErrors("Venta existosa");
+        if ($id = $this->ventas->crearVenta($request->all())) {
+            return redirect()->route('ventas.show', $id)->withErrors("Venta existosa");
         } else {
             return redirect()->back()->withErrors("No se pudo generar la venta");
         }

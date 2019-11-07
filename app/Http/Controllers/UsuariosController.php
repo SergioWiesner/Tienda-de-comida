@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\franquicias;
 use App\Modelos\Herramientas;
+use Illuminate\Http\Request;
 use App\Modelos\usuarios;
+use App\franquicias;
 
 class UsuariosController extends Controller
 {
