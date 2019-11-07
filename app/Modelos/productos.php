@@ -71,8 +71,8 @@ class productos
 
     public static function descuentoStock($id, $cantidad)
     {
-        $stockviejo = producto::where('idproductos', $id)->get(['stock']);
-        $stockactual = $stockviejo - $cantidad;
+        $stockviejo = Herramientas::collectionToArray(producto::where('idproductos', $id)->get())[0];
+        $stockactual = $stockviejo['stock'] - $cantidad;
         if ($stockactual < 0) {
             return producto::where('idproductos', $id)->update([
                 'stock' => $stockactual
