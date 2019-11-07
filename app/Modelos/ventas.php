@@ -42,7 +42,7 @@ class ventas
     public function registrarProductosVenta($idventa, $productos)
     {
 
-//        try {
+        try {
         for ($a = 0; $a < count($productos['id']); $a++) {
             detallesVentas::create([
                 'idventa' => $idventa,
@@ -53,12 +53,12 @@ class ventas
             productos::descuentoStock($productos['id'][$a], $productos['valorunidad'][$a]);
         }
         return true;
-//        } catch (\Exception $e) {
-//            self::eliminarProductosVenta($idventa);
-//            for ($a = 0; $a < count($productos['id']); $a++) {
-//                productos::aumentoStock($productos['id'][$a], $productos['valorunidad'][$a]);
-//            }
-//        }
+        } catch (\Exception $e) {
+            self::eliminarProductosVenta($idventa);
+            for ($a = 0; $a < count($productos['id']); $a++) {
+                productos::aumentoStock($productos['id'][$a], $productos['valorunidad'][$a]);
+            }
+        }
         Log::error("Error al registrar producto de la venta " . $idventa . " ERROR :> " . $e->getMessage());
         return false;
     }
